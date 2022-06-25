@@ -1,7 +1,9 @@
 {
-  "name": "my-react-app",
+  "name": "{{name}}",
   "private": true,
-  "version": "0.0.0",
+  "version": "{{version}}",
+  "author": "{{author}}",
+  "description": "{{description}}",
   "scripts": {
     "dev": "vite",
     "build": "tsc && vite build",
