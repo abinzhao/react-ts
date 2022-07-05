@@ -1,8 +1,8 @@
 import React from 'react';
 import { useParams, useSearchParams, useLocation } from 'react-router-dom';
-import axios from '../../utils/axios';
+import axios from '@/utils/axios';
 import styles from './index.module.scss';
-import API from '../../service';
+import API from '@/service';
 
 const Home = () => {
     const requestRes = async () => {
