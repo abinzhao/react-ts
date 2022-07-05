@@ -1,4 +1,5 @@
 import React from 'react';
+import { useParams, useSearchParams, useLocation } from 'react-router-dom';
 import axios from '../../utils/axios';
 import styles from './index.module.scss';
 import API from '../../service';
@@ -9,12 +10,15 @@ const Home = () => {
             url: '/api/xxx',
             method: 'get',
         });
+        console.log(result);
     };
     const request = async () => {
         const result = await API.login('zhangsan', '123456');
+        console.log(result);
     };
-
-    return <div>home</div>;
+    console.log(requestRes, request);
+    console.log(useSearchParams(), useLocation(), useParams());
+    return <div className="App">Home</div>;
 };
 
 export default Home;

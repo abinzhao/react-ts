@@ -30,7 +30,8 @@ module.exports = {
         ],
         'no-confusing-arrow': 0,
         'no-nested-ternary': 0,
-        'no-console': 2,
+        'no-console': process.env.NODE_ENV === 'production' ? 'error' : 'off',
+        'no-debugger': process.env.NODE_ENV === 'production' ? 'error' : 'off',
         'no-param-reassign': [
             2,
             { props: true, ignorePropertyModificationsFor: ['draft'] },
@@ -38,5 +39,6 @@ module.exports = {
         'react/no-this-in-sfc': 0,
         '@typescript-eslint/explicit-module-boundary-types': 'off',
         '@typescript-eslint/no-non-null-assertion': 'off',
+        'no-constant-condition': ['error', { checkLoops: false }],
     },
 };
