@@ -1,24 +1,57 @@
 {
-  "name": "vite-project",
-  "private": true,
-  "version": "0.0.0",
-  "scripts": {
-    "dev": "vite",
-    "build": "tsc && vite build",
-    "preview": "vite preview"
-  },
-  "dependencies": {
-    "antd": "^4.21.5",
-    "axios": "^0.27.2",
-    "react": "^18.0.0",
-    "react-dom": "^18.0.0",
-    "react-router-dom": "^6.3.0"
-  },
-  "devDependencies": {
-    "@types/react": "^18.0.0",
-    "@types/react-dom": "^18.0.0",
-    "@vitejs/plugin-react": "^1.3.0",
-    "typescript": "^4.6.3",
-    "vite": "^2.9.9"
-  }
+    "name": "vite-project",
+    "private": true,
+    "version": "0.0.0",
+    "scripts": {
+        "dev": "vite",
+        "build": "tsc && vite build",
+        "preview": "vite preview",
+        "eslint:comment": "使用 ESLint 检查并自动修复 src 目录下所有扩展名为 .js 和 .tsx 的文件",
+        "eslint": "eslint --ext .js,.ts,.tsx --ignore-path .gitignore --fix src",
+        "prettier:comment": "自动格式化当前目录下的所有文件",
+        "prettier": "prettier --write",
+        "commit:comment": "引导设置规范化的提交信息",
+        "commit": "git-cz"
+    },
+    "lint-staged": {
+        "*.{js,ts,tsx}": [
+            "npm run eslint",
+            "npm run prettier"
+        ]
+    },
+    "config": {
+        "commitizen": {
+            "path": "node_modules/cz-customizable"
+        }
+    },
+    "dependencies": {
+        "axios": "^0.27.2",
+        "react": "^18.0.0",
+        "react-dom": "^18.0.0",
+        "sass": "^1.53.0"
+    },
+    "devDependencies": {
+        "@commitlint/cli": "^17.0.3",
+        "@commitlint/config-conventional": "^17.0.3",
+        "@types/node": "^18.0.1",
+        "@types/react": "^18.0.0",
+        "@types/react-dom": "^18.0.0",
+        "@typescript-eslint/eslint-plugin": "^5.30.5",
+        "@typescript-eslint/parser": "^5.30.5",
+        "@vitejs/plugin-react": "^1.3.0",
+        "commitizen": "^4.2.4",
+        "commitlint-config-cz": "^0.13.3",
+        "cz-conventional-changelog": "^3.3.0",
+        "cz-customizable": "^6.9.0",
+        "eslint": "^8.19.0",
+        "eslint-config-prettier": "^8.5.0",
+        "eslint-plugin-prettier": "^4.2.1",
+        "eslint-plugin-react": "^7.30.1",
+        "husky": "^8.0.1",
+        "lint-staged": "^13.0.3",
+        "prettier": "^2.7.1",
+        "typescript": "^4.6.3",
+        "vite": "^2.9.9",
+        "vite-plugin-style-import": "^2.0.0"
+    }
 }
